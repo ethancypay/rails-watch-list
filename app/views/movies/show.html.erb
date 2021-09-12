@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-4">
+      <img class="img-thumbnail" src="<%= @movie[:poster_url] %>" alt="<%= @movie[:title] %> poster">
+
+    </div>
+
+    <div class="col-8">
+      <p class="mb-3"><%= @movie[:title] %></p><p class="ml-3"><%= @movie[:rating] %></p>
+      <p>
+        <%= @movie[:overview] %>
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <%= link_to 'Back', movies_path, class: 'btn btn-outline-primary' %>
+
+</div>

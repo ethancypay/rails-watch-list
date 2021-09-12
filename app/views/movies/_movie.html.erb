@@ -1,0 +1,11 @@
+<div class="col-4">
+  <p><input type="checkbox" name="<%= movie[:id] %>" value="movie_id">
+  Select to add</p>
+
+  <a href="<%= movies_path %>/<%= movie[:id] %>">
+    <img class="img-thumbnail" src="<%= movie[:poster_url] %>" alt="<%= movie[:title] %> poster">
+    <p class="mb-3"><%= movie[:title] %></p><p class="ml-3"><%= movie[:rating] %></p>
+
+  </a>
+
+</div>
