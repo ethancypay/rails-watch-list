@@ -6,7 +6,6 @@ class ListsController < ApplicationController
     @list = List.new
     @lists = List.all
     render 'movies/index'
-    raise
   end
 
   def create
