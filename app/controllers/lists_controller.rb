@@ -3,9 +3,9 @@ class ListsController < ApplicationController
 
   def show
     @movies = List.find(params[:id]).movies
+    @the_list = List.find(params[:id])
     @list = List.new
     @lists = List.all
-    render 'movies/index'
   end
 
   def create

@@ -1,29 +1,25 @@
+<div class="sidebar">
+  <div class="pl-3">
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name, input_html: { placeholder: 'List name' } %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
 
-<div class="row">
-  <div class="col-3">
-    <div class="pl-3">
-      <%= simple_form_for @list do |f| %>
-        <%= f.input :name, input_html: { placeholder: 'List name' } %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+    <ul class="mt-3">
+      <%= link_to 'All movies', root_path %>
+      <%= render @lists %>
 
-      <ul class="mt-3">
-        <%= link_to 'All movies', root_path %>
-        <%= render @lists %>
+    </ul>
 
-      </ul>
-
-    </div>
-  </div>
-
-  <div class="col-9">
-    <h1>Movies</h1>
-
-    <form id="create-bookmark" action="<%= bookmarks_create_path %>">
-      <div class="row">
-        <%= render @movies %>
-
-      </div>
-    </form>
   </div>
 </div>
+
+
+<h1>All Movies</h1>
+
+<form id="create-bookmark" action="<%= bookmarks_create_path %>">
+  <div class="row">
+    <%= render @movies %>
+
+  </div>
+</form>
