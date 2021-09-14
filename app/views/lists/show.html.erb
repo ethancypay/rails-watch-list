@@ -1,6 +1,6 @@
-<div class="row">
-  <div class="col-3">
-    <div class="pl-3">
+<div class="d-flex">
+  <div class="sidebar">
+    <div class="p-3">
       <%= simple_form_for @list do |f| %>
         <%= f.input :name, input_html: { placeholder: 'List name' } %>
         <%= f.button :submit, class: 'btn btn-primary' %>
@@ -15,10 +15,11 @@
     </div>
   </div>
 
-  <div class="col-9">
+  <div>
     <h1><%= @the_list.name %></h1>
 
-    <form id="create-bookmark" action="<%= bookmarks_create_path %>">
+    <button id="add_delete" form="delete-bookmark" type="submit" name="list_id" value="<%= @the_list.id %>">Delete selected</button>
+    <form id="delete-bookmark" action="<%= bookmarks_create_path %>">
       <div class="row">
         <%= render @movies %>
 

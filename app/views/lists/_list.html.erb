@@ -1,7 +1,9 @@
 <li>
   <%= link_to list.name, list_path(list) %>
-  <%= link_to list_path(list), method: :delete, class: 'btn btn-outline-primary' do %>
-    <i class="fas fa-times"></i>
+  <% if !@show %>
+    <%= link_to list_path(list), method: :delete, class: 'btn btn-outline-primary' do %>
+      <i class="fas fa-times"></i>
+    <% end %>
+    <button id="add_delete" form="create-bookmark" type="submit" name="list_id" value="<%= list.id %>">Add</button>
   <% end %>
-  <button form="create-bookmark" type="submit" name="list_id" value="<%= list.id %>">Add</button>
 </li>
